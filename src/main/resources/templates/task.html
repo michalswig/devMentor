@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+</head>
+<body>
+<h1>Task Details</h1>
+
+<div>
+    <p><strong>ID:</strong> <span th:text="${task.getId()}"></span></p>
+    <p><strong>Title:</strong> <span th:text="${task.getTitle()}"></span></p>
+    <p><strong>Description:</strong> <span th:text="${task.getDescription()}"></span></p>
+    <p><strong>Completed:</strong> <span th:text="${task.getCompleted()}"></span></p>
+    <p><strong>Deleted:</strong> <span th:text="${task.getCreatedAt()}"></span></p>
+</div>
+
+<div th:if="${error}">
+    <p style="color:red;" th:text="${error}"></p>
+</div>
+
+<a href="/">Back to Home</a>
+</body>
+</html>
