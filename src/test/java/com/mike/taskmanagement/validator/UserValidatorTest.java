@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserValidatorTest {
+
     private UserValidator userValidator;
 
     @BeforeEach
     void setUp() {
-        ValidatorContext context = new ValidatorContext();
-        userValidator = new UserValidator(context);
+        ValidatorContext validatorContext = new ValidatorContext();
+        userValidator = new UserValidator(validatorContext);
     }
 
     @Test
@@ -20,8 +21,8 @@ class UserValidatorTest {
         // Given
         User validUser = new User.Builder()
                 .id(1L)
-                .firstName("John")
-                .lastName("Doe")
+                .firstName("Michał")
+                .lastName("Kościelny")
                 .phoneNumber("+1234567890")
                 .email("john.doe@example.com")
                 .build();
