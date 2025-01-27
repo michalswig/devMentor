@@ -17,7 +17,7 @@ class UserValidatorTest {
     }
 
     @Test
-    void shouldValidateValidUser() {
+    void shouldValidateValidUserWithPolishFonts() {
         // Given
         User validUser = new User.Builder()
                 .id(1L)
@@ -33,5 +33,6 @@ class UserValidatorTest {
         // Then
         assertTrue(isValid, "Expected valid user to pass validation");
     }
+
 
 }
