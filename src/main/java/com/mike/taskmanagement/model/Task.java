@@ -25,3 +25,11 @@ public class Task {
     private LocalDateTime deletedAt;
 
 }
+
+//public static boolean isPolishLetter(char c) {
+//    Character.UnicodeBlock block = Character.UnicodeBlock.of(c);
+//
+//    return Character.isLetter(c) &&
+//            (block == Character.UnicodeBlock.BASIC_LATIN ||
+//                    block == Character.UnicodeBlock.LATIN_EXTENDED_A);
+//}

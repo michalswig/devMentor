@@ -5,6 +5,7 @@ import com.mike.taskmanagement.dto.TaskFilter;
 import com.mike.taskmanagement.exception.ResourceNotFoundException;
 import com.mike.taskmanagement.model.Task;
 import com.mike.taskmanagement.repository.TaskRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TaskService {
     private final TaskRepository taskRepository;
+
 
     public Task save(Task task) {
         return taskRepository.save(task);
