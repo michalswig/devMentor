@@ -32,6 +32,7 @@ public class User {
     public static class Builder {
         private Long id;
         private String firstName;
+        @ToString.Exclude
         private String lastName;
         private String phoneNumber;
         private String email;

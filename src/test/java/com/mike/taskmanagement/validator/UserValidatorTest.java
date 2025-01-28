@@ -1,6 +1,7 @@
 package com.mike.taskmanagement.validator;
 
 import com.mike.taskmanagement.model.User;
+import com.mike.taskmanagement.util.UserDataGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,19 +20,25 @@ class UserValidatorTest {
     @Test
     void shouldValidateValidUserWithPolishFonts() {
         // Given
-        User validUser = new User.Builder()
-                .id(1L)
-                .firstName("Michał")
-                .lastName("Kościelny")
-                .phoneNumber("+1234567890")
-                .email("john.doe@example.com")
-                .build();
+        User validUser = UserDataGenerator.userWithPolishChars();
 
         // When
         boolean isValid = userValidator.validate(validUser);
 
         // Then
         assertTrue(isValid, "Expected valid user to pass validation");
+    }
+
+    @Test
+    void shouldNotValidateUserWithEmptyFirstName(){
+        // Given
+        User validUser = UserDataGenerator.userWithEmptyFirstName();
+
+        // When
+        boolean isValid = userValidator.validate(validUser);
+
+        // Then
+        assertFalse(isValid, "Expected invalid user to fail validation");
     }
 
 

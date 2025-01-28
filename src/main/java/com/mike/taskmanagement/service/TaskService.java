@@ -6,6 +6,7 @@ import com.mike.taskmanagement.exception.ResourceNotFoundException;
 import com.mike.taskmanagement.model.Task;
 import com.mike.taskmanagement.repository.TaskRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
 
 
+    @Transactional
     public Task save(Task task) {
         return taskRepository.save(task);
     }

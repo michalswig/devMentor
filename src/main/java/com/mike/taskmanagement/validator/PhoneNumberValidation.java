@@ -5,4 +5,9 @@ public class PhoneNumberValidation implements ValidatorStrategy {
     public boolean validate(String input) {
         return true;
     }
+
+    @Override
+    public StrategyType getStrategyType() {
+        return StrategyType.PHONE_NUMBER_VALIDATION;
+    }
 }
