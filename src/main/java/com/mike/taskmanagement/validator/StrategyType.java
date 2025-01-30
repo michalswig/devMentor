@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum StrategyType {
-    NAME_VALIDATION("Validation for names"),
+    TEXT_VALIDATION("Validation for text"),
     EMAIL_VALIDATION("Validation for email addresses"),
     PHONE_NUMBER_VALIDATION("Validation for phone numbers");
 

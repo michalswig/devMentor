@@ -1,8 +1,11 @@
 package com.mike.taskmanagement.validator;
 
 import io.micrometer.common.util.StringUtils;
+import org.springframework.stereotype.Service;
 
-public class NameValidation implements ValidatorStrategy {
+@Service
+public class TextValidation implements ValidatorStrategy {
+
     @Override
     public boolean validate(String input) {
         if (StringUtils.isBlank(input)) {
@@ -10,8 +13,8 @@ public class NameValidation implements ValidatorStrategy {
         }
         for (char c : input.toCharArray()) {
             Character.UnicodeBlock block = Character.UnicodeBlock.of(c);
-            boolean isAllowedChar = !Character.isLetter(c) || !(block == Character.UnicodeBlock.BASIC_LATIN || block == Character.UnicodeBlock.LATIN_EXTENDED_A);
-            if (isAllowedChar) {
+            boolean isValidChar  = !Character.isLetter(c) || !(block == Character.UnicodeBlock.BASIC_LATIN || block == Character.UnicodeBlock.LATIN_EXTENDED_A);
+            if (isValidChar ) {
                 return false;
             }
         }
@@ -20,6 +23,7 @@ public class NameValidation implements ValidatorStrategy {
 
     @Override
     public StrategyType getStrategyType() {
-        return StrategyType.NAME_VALIDATION;
+        return StrategyType.TEXT_VALIDATION;
     }
+
 }
