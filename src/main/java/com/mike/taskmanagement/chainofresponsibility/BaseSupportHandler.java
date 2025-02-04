@@ -1,6 +1,6 @@
 package com.mike.taskmanagement.chainofresponsibility;
 
-public abstract class BaseSupportHandler implements SupportHandler {
+abstract class BaseSupportHandler implements SupportHandler {
 
     private SupportHandler nextHandler;
 

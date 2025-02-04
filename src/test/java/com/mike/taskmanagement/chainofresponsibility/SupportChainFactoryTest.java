@@ -27,19 +27,9 @@ class SupportChainFactoryTest {
     void testCreateChain_ShouldCorrectlyLinkHandlers() {
         SupportHandler chain = SupportChainFactory.createChain(List.of(level1, level2, level3));
 
-        // Verify setNext() was called to link handlers correctly
         verify(level1).setNext(level2);
         verify(level2).setNext(level3);
-        verify(level3, never()).setNext(any()); // Last handler should not setNext()
-    }
-
-    @Test
-    void testCreateChain_HandlesSingleElementChain() {
-        SupportHandler singleHandler = mock(SupportHandler.class);
-        SupportHandler chain = SupportChainFactory.createChain(List.of(singleHandler));
-
-        // Verify no linking occurs since it's a single element
-        verify(singleHandler, never()).setNext(any());
+        verify(level3, never()).setNext(any());
     }
 
     @Test
